@@ -4,7 +4,7 @@ RUN /src/build-toolchain.sh
 
 FROM ubuntu:24.04
 COPY --from=build /opt /opt
-ENV XTOOLS_HOST="x86_64-linux-musl"
+ENV XTOOLS_HOST="x86_64-linux-uclibc"
 ENV \
 	PATH="/opt/x-tools/$XTOOLS_HOST/bin:$PATH" \
 	PKG_CONFIG_PATH="/opt/x-tools/$XTOOLS_HOST/$XTOOLS_HOST/sysroot/usr/lib/pkgconfig"
